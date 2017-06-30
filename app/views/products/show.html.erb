@@ -1,42 +1,45 @@
-<p>
-  <%= link_to "Home", root_path, class: "f4 fw7 dib pa2 no-underline bg-animate  hover-bg-light-blue blue" %>
-</p>
+<div class="marginize">
+  <p>
+    <%= link_to "Home", root_path, class: "f4 fw7 dib pa2 no-underline bg-animate  hover-bg-light-blue blue" %>
+  </p>
 
-<h1><%= @product.name %></h1>
-<h3><%= @product.origin %></h3>
-<h3><%= @product.cost %></h3>
+  <h1><%= @product.name %></h1>
+  <h3>located in: <%= @product.origin %></h3>
+  <h3>$<%= @product.cost %></h3>
 
-<% if @product.reviews.any? %>
+  <% if @product.reviews.any? %>
   <h4>Here are the reviews for this product:</h4>
 
   <ul>
     <% @product.reviews.each do |review| %>
-      <li>
-        <%= review.author %> | <%= review.content %> | <%= review.rating %>
-        <%= link_to "Edit", edit_product_review_path(@product, review), class: "f4 fw7 dib pa2 no-underline bg-animate  hover-bg-light-blue blue" %> |
-        <%= link_to "Delete", product_review_path(@product, review),
-                                 :data => {:confirm => "Are you sure?",
-                                                :method => "delete"} , class: "f4 fw7 dib pa2 no-underline bg-animate  hover-bg-light-blue blue"%>
+    <li>
+      by: <%= review.author %> | <%= review.content %> | Rating: <%= review.rating %>
+      <%= link_to "Edit", edit_product_review_path(@product, review), class: "f4 fw7 dib pa2 no-underline bg-animate  hover-bg-light-blue blue" %> |
+      <%= link_to "Delete", product_review_path(@product, review),
+      :data => {:confirm => "Are you sure?",
+        :method => "delete"} , class: "f4 fw7 dib pa2 no-underline bg-animate  hover-bg-light-blue blue"%>
       </li>
+      <% end %>
+    </ul>
+    <% else %>
+    <p>There are no reviews yet!</p>
     <% end %>
-  </ul>
-<% else %>
-  <p>There are no reviews yet!</p>
-<% end %>
 
-<p><%= link_to "Add a review", new_product_review_path(@product), class: "f4 fw7 dib pa2 no-underline bg-animate  hover-bg-light-blue blue" %></p>
-<p><%= link_to "Delete Product", product_path(@product),
-                        :data => {:confirm => "Are you sure?",
-                                       :method => "delete"}, class: "f4 fw7 dib pa2 no-underline bg-animate  hover-bg-light-blue blue" %></p>
+    <p><%= link_to "Add a review", new_product_review_path(@product), class: "f4 fw7 dib pa2 no-underline bg-animate  hover-bg-light-blue blue" %></p>
+    <p><%= link_to "Delete Product", product_path(@product),
+    :data => {:confirm => "Are you sure?",
+      :method => "delete"}, class: "f4 fw7 dib pa2 no-underline bg-animate  hover-bg-light-blue blue" %></p>
 
 
 
 
-<p><%= link_to "Return to products", products_path , class: "f4 fw7 dib pa2 no-underline bg-animate  hover-bg-light-blue blue"%></p>
+      <p><%= link_to "Return to products", products_path , class: "f4 fw7 dib pa2 no-underline bg-animate  hover-bg-light-blue blue"%></p>
 
-<br>
+      <br>
 
-<p><%= link_to "Edit", edit_product_path(@product), class: "f4 fw7 dib pa2 no-underline bg-animate  hover-bg-light-blue blue" %></p>
-<p><%= link_to "Delete", product_path(@product),
-                         :data => {:confirm => "You sure?",
-                                   :method => "delete"}, class: "f4 fw7 dib pa2 no-underline bg-animate  hover-bg-light-blue blue" %></p>
+      <p><%= link_to "Edit", edit_product_path(@product), class: "f4 fw7 dib pa2 no-underline bg-animate  hover-bg-light-blue blue" %></p>
+      <p><%= link_to "Delete", product_path(@product),
+      :data => {:confirm => "You sure?",
+        :method => "delete"}, class: "f4 fw7 dib pa2 no-underline bg-animate  hover-bg-light-blue blue" %></p>
+
+</div>

@@ -1,8 +1,18 @@
 body {
   font-family: helvetica;
 }
+
 a {
   text-decoration: none;
   font-family: helvetica;
   color: black;
+}
+
+.marginize {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.landing-shade {
+  height: 100vh;
 }
