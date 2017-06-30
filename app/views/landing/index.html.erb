@@ -1,9 +1,29 @@
-<h1>This is the landing page</h1>
+<header class="sans-serif">
+  <div class="cover bg-left bg-center-l" style="background-image: url(http://www.commonground.coop/sites/default/files/vegetables%20wooden%20background-croppedx2.jpg)">
+    <div class="bg-black-80 pb5 pb6-m pb7-l">
+      <nav class="dt w-100 mw8 center">
 
-<h3>Recently added products:</h3>
-<% @recent_products.each do |product| %>
-  <%= link_to product.name, product_path(product) %>
-<% end %>
+      </nav>
+      <div class="tc-l mt4 mt5-m mt6-l ph3">
+        <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">All your dietary needs in one place</h1>
+        <h2 class="fw1 f3 white-80 mt3 mb4">Global food distribution, at the click of a button</h2>
+        <%= link_to "View Products", products_path, class: "f6 no-underline grow dib v-mid bg-blue white ba b--blue ph3 pv2 mb3" %>
+        <span class="dib v-mid ph3 white-70 mb3">or</span>
+        <%= link_to "Shop Local", {:controller => "products", :action => "index", :filter => "local" }, class: "f6 no-underline grow dib v-mid white ba b--white ph3 pv2 mb3" %>
 
-<h3>Most Reviewed:</h3>
-<%= link_to @most_reviewed.name, product_path(@most_reviewed) %>
+        <article class="cf">
+          <div class="fl w-50  tc">
+            <h3 class="center white">Most Reviewed:</h3>
+            <%= link_to @most_reviewed.name, product_path(@most_reviewed), class: "f4 fw7 dib pa2 no-underline bg-animate white hover-bg-light-blue black" %>
+          </div>
+          <div class="fl w-50  tc">
+            <h3 class="center white">Recently added products:</h3>
+            <% @recent_products.each do |product| %>
+              <%= link_to product.name, product_path(product), class: "f4 fw7 dib pa2 no-underline bg-animate white hover-bg-light-blue black" %>
+            <% end %>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</header>

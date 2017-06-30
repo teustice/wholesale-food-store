@@ -1,9 +1,9 @@
 class ProductsController < ApplicationController
   def index
     if params['filter'] === 'local'
-      @products = Product.local[0]
+      @products = Product.local
     else
-      @products = Product.all
+      @products = Product.paginate(:page => params[:page], :per_page => 10)
     end
   end
 
@@ -18,6 +18,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
+      flash[:notice] = "Product successfully added!"
       redirect_to  products_path
     else
       render :new
@@ -40,6 +41,7 @@ class ProductsController < ApplicationController
 
   def destroy
     @product = Product.find(params[:id])
+    flash[:alert] = "#{@product.name} has been deleted"
     @product.destroy
     redirect_to products_path
   end

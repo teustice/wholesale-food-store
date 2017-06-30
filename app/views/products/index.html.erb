@@ -1,9 +1,15 @@
+<p>
+  <%= link_to "Home", root_path, class: "f4 fw7 dib pa2 no-underline bg-animate hover-bg-light-blue blue" %>
+</p>
+
 <h1>Products</h1>
 
-<ul>
-  <% @products.each do |product| %>
-    <li><%= link_to product.name, product_path(product) %> | <%= product.origin %> | $<%= product.cost %></li>
-  <% end %>
-</ul>
+<%= link_to "New Product", new_product_path, class: "f4 fw7 dib pa2 no-underline bg-animate  hover-bg-light-blue blue" %>
 
-<%= link_to "New Product", new_product_path %>
+<% @products.each do |product| %>
+  <div class="pa1 lh-copy">
+    <span class="f4 fw7 dib  no-underline bg-animate bg-white hover-bg-light-blue "><%= link_to product.name, product_path(product), class: "f4 fw7 dib  no-underline bg-animate  hover-bg-light-blue blue"%></span> | <%= "Origin: #{product.origin}" %> | $<%= product.cost %>
+  </div>
+<% end %>
+
+<%= will_paginate @posts %>

@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
     @review = @product.reviews.new(review_params)
     @review.rating = @review.rating.to_i
     if @review.save
+      flash[:notice] = "Review successfully added!"
       redirect_to product_path(@review.product)
     else
       render :new
@@ -36,6 +37,7 @@ class ReviewsController < ApplicationController
     @product = Product.find(params[:product_id])
     @review = @product.reviews.find(params[:id])
     @review.destroy
+    flash[:alert] = "Review has been deleted"
     redirect_to product_path(@review.product)
   end
 
