@@ -1,24 +1,32 @@
-# README
+# _Wholesale food retailer_
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### _An application for posting products to be reviewed, 6/30/2017_
 
-Things you may want to cover:
+#### By _**Tanner Eustice**_
 
-* Ruby version
+## Setup/Installation Requirements
 
-* System dependencies
+* _Clone the repo_
+* _Run the following commands in the root of the project to set up the application_
+```
+$ bundle install
+$ rails db:create
+$ rails db:schema:load
+```
+To start a development server, run ```$ rails s```
+To populate the database, run ```$ rails db:seed```
 
-* Configuration
+## Technologies Used
 
-* Database creation
+* _HTML5/SCSS_
+* _Rails 5.1_
+* _Ruby 2.4_
+* _Rspec_
+* _Capybara_
+* _Faker_
 
-* Database initialization
+### License
 
-* How to run the test suite
+*MIT*
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Copyright (c) 2017 **_Tanner Eustice_**
