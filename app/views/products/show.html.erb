@@ -26,20 +26,10 @@
     <% end %>
 
     <p><%= link_to "Add a review", new_product_review_path(@product), class: "f4 fw7 dib pa2 no-underline bg-animate  hover-bg-light-blue blue" %></p>
-    <p><%= link_to "Delete Product", product_path(@product),
-    :data => {:confirm => "Are you sure?",
-      :method => "delete"}, class: "f4 fw7 dib pa2 no-underline bg-animate  hover-bg-light-blue blue" %></p>
-
-
-
-
       <p><%= link_to "Return to products", products_path , class: "f4 fw7 dib pa2 no-underline bg-animate  hover-bg-light-blue blue"%></p>
-
       <br>
-
-      <p><%= link_to "Edit", edit_product_path(@product), class: "f4 fw7 dib pa2 no-underline bg-animate  hover-bg-light-blue blue" %></p>
-      <p><%= link_to "Delete", product_path(@product),
+      <p><%= link_to "Edit Product", edit_product_path(@product), class: "f4 fw7 dib pa2 no-underline bg-animate  hover-bg-light-blue blue" %></p>
+      <p><%= link_to "Delete Product", product_path(@product),
       :data => {:confirm => "You sure?",
         :method => "delete"}, class: "f4 fw7 dib pa2 no-underline bg-animate  hover-bg-light-blue blue" %></p>
-
 </div>

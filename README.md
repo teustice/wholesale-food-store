@@ -25,7 +25,7 @@ To populate the database, run ```$ rails db:seed```
 * _Capybara_
 * _Faker_
 
-##View
+## View
 _landing page:_
 ![](https://github.com/teustice/wholesale-food-store/blob/master/app/assets/images/Screen%20Shot%202017-06-30%20at%202.48.38%20PM.png)
 

@@ -28,8 +28,8 @@ RSpec.configure do |config|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
     config.before :all do
       product = Product.create(name: "someproduct", cost: 4, origin: "Mexico")
-      product = Product.create(name: "someproduct1", cost: 4, origin: "Mexico")
-      product = Product.create(name: "someproduct2", cost: 4, origin: "Mexico")
+      Product.create(name: "someproduct1", cost: 4, origin: "Mexico")
+      Product.create(name: "someproduct2", cost: 4, origin: "Mexico")
       product.reviews.create(author: "someperson", content:"some stuff", rating: 4)
     end
     config.after :all do
