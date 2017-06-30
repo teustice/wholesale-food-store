@@ -12,4 +12,6 @@ class Product < ActiveRecord::Base
     .group("products.id")
     .order("reviews_count DESC")
     )}
+
+  scope :local, -> { where(origin: 'USA')}
 end

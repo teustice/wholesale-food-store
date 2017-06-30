@@ -1,6 +1,10 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    if params['filter'] === 'local'
+      @products = Product.local[0]
+    else
+      @products = Product.all
+    end
   end
 
   def show

@@ -27,4 +27,14 @@ describe Product do
       expect(popular_product[0].name).to eq product.name
     end
   end
+
+  describe '#local' do
+    it "should return products from the USA" do
+      Product.create(name: "somename", cost: 5, origin: "someplace")
+      product = Product.create(name: "coolest product", cost: 5, origin: "USA")
+
+      local_product = Product.local
+      expect(local_product[0]).to eq product
+    end
+  end
 end
