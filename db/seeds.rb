@@ -6,14 +6,9 @@ Review.destroy_all
                         cost: Faker::Number.decimal(2),
                         origin: Faker::LordOfTheRings.location)
 
-  newProduct.reviews.create(author: Faker::LordOfTheRings.character, content: Faker::HarryPotter.quote, rating: Faker::Number.between(1, 5))
-  newProduct.reviews.create(author: Faker::LordOfTheRings.character, content: Faker::HarryPotter.quote, rating: Faker::Number.between(1, 5))
-  newProduct.reviews.create(author: Faker::LordOfTheRings.character, content: Faker::HarryPotter.quote, rating: Faker::Number.between(1, 5))
-  newProduct.reviews.create(author: Faker::LordOfTheRings.character, content: Faker::HarryPotter.quote, rating: Faker::Number.between(1, 5))
-  newProduct.reviews.create(author: Faker::LordOfTheRings.character, content: Faker::HarryPotter.quote, rating: Faker::Number.between(1, 5))
-  newProduct.reviews.create(author: Faker::LordOfTheRings.character, content: Faker::HarryPotter.quote, rating: Faker::Number.between(1, 5))
-  newProduct.reviews.create(author: Faker::LordOfTheRings.character, content: Faker::HarryPotter.quote, rating: Faker::Number.between(1, 5))
-  newProduct.reviews.create(author: Faker::LordOfTheRings.character, content: Faker::HarryPotter.quote, rating: Faker::Number.between(1, 5))
+  5.times do
+    newProduct.reviews.create(author: Faker::LordOfTheRings.character, content: Faker::HarryPotter.quote, rating: Faker::Number.between(1, 5))
+  end
 end
 
 # LOCAL PRODUCTS
@@ -22,8 +17,9 @@ end
                         cost: Faker::Number.decimal(2),
                         origin: "USA")
 
-  newProduct.reviews.create(author: Faker::LordOfTheRings.character, content: Faker::HarryPotter.quote, rating: Faker::Number.between(1, 5))
-  newProduct.reviews.create(author: Faker::LordOfTheRings.character, content: Faker::HarryPotter.quote, rating: Faker::Number.between(1, 5))
+  5.times do
+    newProduct.reviews.create(author: Faker::LordOfTheRings.character, content: Faker::HarryPotter.quote, rating: Faker::Number.between(1, 5))
+  end
 end
 
 p "Created #{Product.count} products"
